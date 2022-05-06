@@ -243,6 +243,13 @@ When /^I click the "(.*?)" (?:button|link)$/  do |button_or_link|
   end
 end
 
+#Example: When I click "Submit"
+When /^I click "(.*?)"$/  do |locator|
+  patiently do
+    element = get_element_from(locator)
+    click_element(element)
+  end
+end
 
 #************************ END BUTTONS AND LINKS***********************************
 
